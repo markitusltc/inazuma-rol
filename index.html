@@ -406,7 +406,7 @@
     </div>
 
     <!-- Grid de zonas para que el jugador se mueva -->
-    <div id="mapa-grid-jugador">
+    <div id="mapa-grid-jugador" style="max-width:100%;">
       <div class="seccion-sub" style="margin-bottom:.8rem">Tus zonas disponibles:</div>
       <div class="mapa-grid" id="zonas-grid"></div>
     </div>
@@ -617,7 +617,7 @@ function resaltarZonaActiva(zonaId) {
 function renderMapaPrincipal() {
   const grid = document.getElementById('zonas-grid');
   grid.innerHTML = `
-    <div style="position:relative;width:100%;max-width:1200px;">
+    <div style="position:relative;width:100%;max-width:100%;">
       <img src="${IMG_MAPA}" style="width:100%;border-radius:12px;display:block;" alt="Mapa del barrio"/>
       <div class="zona-overlay" id="zona-btn-dodecathlon" onclick="irAZona('dodecathlon')"
         style="position:absolute;top:2.4%;left:3.4%;width:29.3%;height:43.3%;
@@ -627,7 +627,7 @@ function renderMapaPrincipal() {
         onmouseout="this.style.background='rgba(33,150,243,0.15)'">
       </div>
       <div class="zona-overlay" id="zona-btn-parking" onclick="irAZona('parking')"
-        style="position:absolute;top:0%;left:34.6%;width:10.3%;height:47.8%;
+        style="position:absolute;top:1.5%;left:34.6%;width:10.3%;height:44.8%;
         background:rgba(96,125,139,0.15);border:3px solid #607D8B;border-radius:6px;
         cursor:pointer;transition:all .2s;"
         onmouseover="this.style.background='rgba(96,125,139,0.4)'"
