@@ -687,8 +687,8 @@ function mostrarEscena(zonaId) {
   const display = document.getElementById('escena-display');
   if (z.img) {
     display.innerHTML = `
-      <div style="width:100%;height:220px;overflow:hidden;border-radius:10px;background:#000;">
-        <img src="${z.img}" style="width:100%;height:100%;object-fit:cover;object-position:center;" alt="${z.nombre}"/>
+      <div style="width:100%;border-radius:10px;overflow:hidden;background:#000;">
+        <img src="${z.img}" style="width:100%;height:auto;display:block;border-radius:10px;" alt="${z.nombre}"/>
       </div>
       <div style="margin-top:.8rem;">
         <div class="escena-nombre">${z.nombre.toUpperCase()}</div>
