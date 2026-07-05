@@ -108,6 +108,7 @@
 
     /* ===== SECCIONES ===== */
     .seccion { display:none; padding:1.5rem; }
+  #sec-mapa { padding:1rem 0.5rem; }
     .seccion.activa { display:block; }
     .back-btn {
       background:transparent; border:1px solid rgba(255,255,255,0.15); border-radius:8px;
@@ -382,8 +383,8 @@
 
   <!-- ===== SECCIÓN: MAPA ===== -->
   <div class="seccion" id="sec-mapa">
-    <button class="back-btn" onclick="volverMenu()">← Volver al menú</button>
-    <div class="seccion-title">🗺️ MAPA</div>
+    <button class="back-btn" onclick="volverMenu()" style="margin-left:1rem;">← Volver al menú</button>
+    <div class="seccion-title" style="padding-left:1rem;">🗺️ MAPA</div>
     <div class="seccion-sub">Muévete por las zonas del mundo</div>
 
     <!-- Escena actual (visible a todos) -->
@@ -406,7 +407,7 @@
     </div>
 
     <!-- Grid de zonas para que el jugador se mueva -->
-    <div id="mapa-grid-jugador" style="max-width:100%;">
+    <div id="mapa-grid-jugador" style="width:100%;padding:0;">
       <div class="seccion-sub" style="margin-bottom:.8rem">Tus zonas disponibles:</div>
       <div class="mapa-grid" id="zonas-grid"></div>
     </div>
@@ -617,7 +618,7 @@ function resaltarZonaActiva(zonaId) {
 function renderMapaPrincipal() {
   const grid = document.getElementById('zonas-grid');
   grid.innerHTML = `
-    <div style="position:relative;width:100%;max-width:100%;">
+    <div style="position:relative;width:100%;">
       <img src="${IMG_MAPA}" style="width:100%;border-radius:12px;display:block;" alt="Mapa del barrio"/>
       <div class="zona-overlay" id="zona-btn-dodecathlon" onclick="irAZona('dodecathlon')"
         style="position:absolute;top:2.4%;left:3.4%;width:29.3%;height:43.3%;
@@ -627,7 +628,7 @@ function renderMapaPrincipal() {
         onmouseout="this.style.background='rgba(33,150,243,0.15)'">
       </div>
       <div class="zona-overlay" id="zona-btn-parking" onclick="irAZona('parking')"
-        style="position:absolute;top:1.5%;left:34.6%;width:10.3%;height:44.8%;
+        style="position:absolute;top:1.5%;left:34.9%;width:8.5%;height:38%;
         background:rgba(96,125,139,0.15);border:3px solid #607D8B;border-radius:6px;
         cursor:pointer;transition:all .2s;"
         onmouseover="this.style.background='rgba(96,125,139,0.4)'"
