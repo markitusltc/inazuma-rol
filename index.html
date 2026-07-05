@@ -617,43 +617,43 @@ function resaltarZonaActiva(zonaId) {
 function renderMapaPrincipal() {
   const grid = document.getElementById('zonas-grid');
   grid.innerHTML = `
-    <div style="position:relative;width:100%;max-width:1100px;">
+    <div style="position:relative;width:100%;max-width:1200px;">
       <img src="${IMG_MAPA}" style="width:100%;border-radius:12px;display:block;" alt="Mapa del barrio"/>
-      <!-- Dodecathlon: bloque azul grande arriba izquierda -->
+      <!-- Dodecathlon: bloque azul grande, solo el edificio azul -->
       <div class="zona-overlay" id="zona-btn-dodecathlon" onclick="irAZona('dodecathlon')"
-        style="position:absolute;top:1%;left:0%;width:28%;height:48%;
+        style="position:absolute;top:1%;left:0.5%;width:22%;height:46%;
         background:rgba(33,150,243,0.15);border:3px solid #2196F3;border-radius:6px;
         cursor:pointer;transition:all .2s;"
         onmouseover="this.style.background='rgba(33,150,243,0.4)'"
         onmouseout="this.style.background='rgba(33,150,243,0.15)'">
       </div>
-      <!-- Parking: franja gris vertical -->
+      <!-- Parking: franja gris estrecha -->
       <div class="zona-overlay" id="zona-btn-parking" onclick="irAZona('parking')"
-        style="position:absolute;top:1%;left:28.5%;width:8%;height:48%;
+        style="position:absolute;top:1%;left:23%;width:6%;height:46%;
         background:rgba(96,125,139,0.15);border:3px solid #607D8B;border-radius:6px;
         cursor:pointer;transition:all .2s;"
         onmouseover="this.style.background='rgba(96,125,139,0.4)'"
         onmouseout="this.style.background='rgba(96,125,139,0.15)'">
       </div>
-      <!-- Bar Manuelita: bloque naranja arriba derecha -->
+      <!-- Bar Manuelita: solo el bloque naranja -->
       <div class="zona-overlay" id="zona-btn-barmanuelita" onclick="irAZona('barmanuelita')"
-        style="position:absolute;top:1%;left:55%;width:20%;height:30%;
+        style="position:absolute;top:1%;left:56%;width:15%;height:28%;
         background:rgba(255,152,0,0.15);border:3px solid #FF9800;border-radius:6px;
         cursor:pointer;transition:all .2s;"
         onmouseover="this.style.background='rgba(255,152,0,0.4)'"
         onmouseout="this.style.background='rgba(255,152,0,0.15)'">
       </div>
-      <!-- Parque: bloque verde derecha (campo de futbol + parque) -->
+      <!-- Parque: campo futbol + zona parque, sin solapar bar -->
       <div class="zona-overlay" id="zona-btn-parque" onclick="irAZona('parque')"
-        style="position:absolute;top:1%;left:75.5%;width:24%;height:48%;
+        style="position:absolute;top:1%;left:72%;width:27.5%;height:46%;
         background:rgba(139,195,74,0.15);border:3px solid #8BC34A;border-radius:6px;
         cursor:pointer;transition:all .2s;"
         onmouseover="this.style.background='rgba(139,195,74,0.4)'"
         onmouseout="this.style.background='rgba(139,195,74,0.15)'">
       </div>
-      <!-- Carrefive: bloque morado abajo centro -->
+      <!-- Carrefive: bloque morado abajo, bien centrado -->
       <div class="zona-overlay" id="zona-btn-carrefive" onclick="irAZona('carrefive')"
-        style="position:absolute;top:62%;left:28%;width:32%;height:36%;
+        style="position:absolute;top:63%;left:24%;width:30%;height:35%;
         background:rgba(76,175,80,0.15);border:3px solid #4CAF50;border-radius:6px;
         cursor:pointer;transition:all .2s;"
         onmouseover="this.style.background='rgba(76,175,80,0.4)'"
@@ -690,7 +690,9 @@ function mostrarEscena(zonaId) {
   const display = document.getElementById('escena-display');
   if (z.img) {
     display.innerHTML = `
-      <img src="${z.img}" style="width:100%;max-height:280px;object-fit:cover;border-radius:10px;display:block;" alt="${z.nombre}"/>
+      <div style="width:100%;height:220px;overflow:hidden;border-radius:10px;background:#000;">
+        <img src="${z.img}" style="width:100%;height:100%;object-fit:cover;object-position:center;" alt="${z.nombre}"/>
+      </div>
       <div style="margin-top:.8rem;">
         <div class="escena-nombre">${z.nombre.toUpperCase()}</div>
         <div class="escena-desc">${z.desc}</div>
