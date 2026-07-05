@@ -642,7 +642,7 @@ function renderMapaPrincipal() {
         onmouseout="this.style.background='transparent'">
       </div>
       <div class="zona-overlay" id="zona-btn-parque" onclick="irAZona('parque')"
-        style="position:absolute;top:1%;left:68.9%;width:25.6%;height:47%;
+        style="position:absolute;top:1%;left:76%;width:18%;height:30%;
         background:transparent;border:none;border-radius:6px;
         cursor:pointer;transition:all .2s;"
         onmouseover="this.style.background='rgba(139,195,74,0.25)'"
@@ -665,6 +665,7 @@ async function irAZona(zonaId) {
   document.getElementById('mi-zona-nombre').textContent = z ? z.nombre : zonaId;
   mostrarEscena(zonaId);
   resaltarZonaActiva(zonaId);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   await actualizarMapa();
 }
 
